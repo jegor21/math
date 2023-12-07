@@ -1,12 +1,13 @@
-﻿import random
+import random
 
 print("Добро пожаловать!")
 tase = int(input("Выберите сложность (1, 2, 3): "))
 mode = input("Выберите действие (+, -, *, /, **): ")
 numbr = int(input("Введите количество заданий: ")) 
 
+a = numbr
 õige = 0
-
+he = 0
 while numbr > 0: #выбор уровня
     if tase == 1:
         num1 = random.randint(1, 10)
@@ -38,16 +39,16 @@ while numbr > 0: #выбор уровня
 
     if sanswer == õige:
         print("Верно!")
-        õige += 1
+        he += 1
     else:
         print(f"Неверно. Правильный ответ: {õige}")
 
     numbr -= 1
 
-v = (õige / (numbr + õige)) * 100
+v = (he / a) * 100
 
 print("Ваша оценка: ", end='')
-
+print(v)
 if v < 60: #% решений
     print("Hinne 2")
 elif 60 <= v < 75:
